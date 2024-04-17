@@ -1,17 +1,50 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+const React = require('react');
+const ReactDOM = require('react-dom');
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function Header() {
+    return (
+        <header className="header">
+            {/* Вміст хедера */}
+            <h1>Мій додаток</h1>
+        </header>
+    );
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+function Sidebar() {
+    return (
+        <aside className="sidebar">
+            {/* Вміст лівої бічної навігації */}
+            <ul>
+                <li>Пункт 1</li>
+                <li>Пункт 2</li>
+                <li>Пункт 3</li>
+            </ul>
+        </aside>
+    );
+}
+
+function MainContent() {
+    return (
+        <main className="main-content">
+            {/* Вміст центрального контейнера */}
+            <div>
+                <h2>Центральний контент</h2>
+                <p>Це центральний блок контенту.</p>
+            </div>
+        </main>
+    );
+}
+
+function App() {
+    return (
+        <div className="app">
+            <Header />
+            <div className="container">
+                <Sidebar />
+                <MainContent />
+            </div>
+        </div>
+    );
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
